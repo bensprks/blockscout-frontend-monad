@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: LicenseRef-Blockscout
+// Modified 2026-11-20: label Monad universal transactions (type 0x40).
 
 import { Box, Text } from '@chakra-ui/react';
 import React from 'react';
@@ -28,6 +29,7 @@ const TxDetailsOther = ({ nonce, type, position, queueIndex }: Props) => {
                 { type === 2 && <Text as="span" ml={ 1 } color="text.secondary">(EIP-1559)</Text> }
                 { type === 3 && <Text as="span" ml={ 1 } color="text.secondary">(EIP-4844)</Text> }
                 { type === 4 && <Text as="span" ml={ 1 } color="text.secondary">(EIP-7702)</Text> }
+                { type === 64 && <Text as="span" ml={ 1 } color="text.secondary">(Universal, 0x40)</Text> }
               </Box>
             ),
             queueIndex !== undefined ? (
