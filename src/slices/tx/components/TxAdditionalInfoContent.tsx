@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: LicenseRef-Blockscout
+// Modified 2026-11-20: label Monad universal transactions (type 0x40).
 
 import { Box, Flex, VStack, Separator, HStack, chakra } from '@chakra-ui/react';
 import BigNumber from 'bignumber.js';
@@ -166,6 +167,7 @@ const TxAdditionalInfoContent = ({ tx, isLoading }: { tx: schemas['Transaction']
                 <span>Txn type: </span>
                 <chakra.span fontWeight="700">{ tx.type }</chakra.span>
                 { tx.type === 2 && <chakra.span color="text.secondary"><span>(EIP-1559)</span></chakra.span> }
+                { tx.type === 64 && <chakra.span color="text.secondary"><span>(Universal, 0x40)</span></chakra.span> }
               </Skeleton>
               <Skeleton loading={ isLoading } display="flex" alignItems="center" gap={ 1 }>
                 <span>Nonce:</span>
