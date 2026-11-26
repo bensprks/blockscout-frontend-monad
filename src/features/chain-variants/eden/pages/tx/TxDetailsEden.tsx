@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: LicenseRef-Blockscout
+// Modified 2026-11-26: the calls hint no longer says "sponsored"; Monad batches are not.
 
 import { Flex, Grid } from '@chakra-ui/react';
 import React from 'react';
@@ -80,7 +81,7 @@ const TxDetailsEden = ({ data, isLoading }: Props) => {
       { calls && calls.length > 0 && (
         <>
           <DetailedInfo.ItemLabel
-            hint="Ordered list of calls batched into this sponsored transaction"
+            hint="Ordered list of calls batched into this transaction"
             isLoading={ isLoading }
           >
             Calls
